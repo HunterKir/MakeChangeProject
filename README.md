@@ -1,5 +1,7 @@
 # Make Change Project
 
+## By Hunter Kiritsis
+
 First week project for Skill Distillery.
 Demonstrates:
 * Basic Java language skills
