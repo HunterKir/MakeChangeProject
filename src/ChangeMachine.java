@@ -21,50 +21,84 @@ public class ChangeMachine {
 		}
 		else {
 			difference = payment - price;
-			differenceInt = (int)difference * 100;
+			differenceInt = (int)(difference * 100);
+			System.out.println(differenceInt);
+			makeChange(differenceInt);
 		}
+		
+		for (int i = 0; i < change.length; i++) {
+			if (change[i] > 0) {
+				do {
+					printMoney(i);
+					change[i]--;
+				} while (change[i] != 0);
+			}
+		}
+	}
+	public static void printMoney(int arrIndex) {
+		if (arrIndex == 0)
+			System.out.print("$100 ");
+		else if (arrIndex == 1)
+			System.out.print("$50 ");
+		else if (arrIndex == 2)
+			System.out.print("$20 ");
+		else if (arrIndex == 3)
+			System.out.print("$10 ");
+		else if (arrIndex == 4)
+			System.out.print("$5 ");
+		else if (arrIndex == 5)
+			System.out.print("$1 ");
+		else if (arrIndex == 6)
+			System.out.print(".25c ");
+		else if (arrIndex == 7)
+			System.out.print(".10c ");
+		else if (arrIndex == 8)
+			System.out.print(".05c ");
+		else if (arrIndex == 9)
+			System.out.print(".01c ");
 	}
 	
 	public static void makeChange(int differenceInt) {
 		while (differenceInt != 0) {
-			if (differenceInt % 10000 == 0) {
+			if (differenceInt - 10000 >= 0) {
 				change[0]++;
-				break;
+				differenceInt -= 10000;
 			}
-			else if (differenceInt % 5000 == 0) {
+			else if (differenceInt - 5000 >= 0) {
 				change[1]++;
-				break;
+				differenceInt -= 5000;
 			}
-			else if (differenceInt % 2000 == 0) {
+			else if (differenceInt - 2000 >= 0) {
 				change[2]++;
-				break;
+				differenceInt -= 2000;
 			}
-			else if (differenceInt % 1000 == 0) {
+			else if (differenceInt - 1000 >= 0) {
 				change[3]++;
-				break;
+				differenceInt -= 1000;
 			}
-			else if (differenceInt % 500 == 0) {
+			else if (differenceInt - 500 >= 0) {
 				change[4]++;
-				break;
+				differenceInt -= 500;
 			}
-			else if (differenceInt % 100 == 0) {
+			else if (differenceInt - 100 >= 0) {
 				change[5]++;
-				break;
+				differenceInt -= 100;
 			}
-			else if (differenceInt % 25 == 0) {
+			else if (differenceInt - 25 >= 0) {
 				change[6]++;
-				break;
+				differenceInt -= 25;
 			}
-			else if (differenceInt % 10 == 0) {
+			else if (differenceInt - 10 >= 0) {
 				change[7]++;
-				break;
+				differenceInt -= 10;
 			}
-			else if (differenceInt % 5 == 0) {
+			else if (differenceInt - 5 >= 0) {
 				change[8]++;
-				break;
+				differenceInt -= 5;
 			}
 			else {
 				change[9]++;
+				differenceInt--;
 			}
 				
 		}
