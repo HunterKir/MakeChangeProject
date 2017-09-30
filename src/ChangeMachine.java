@@ -1,9 +1,20 @@
+import java.util.Scanner;
 
 public class ChangeMachine {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Scanner kb = new Scanner(System.in);
+		double price, payment;
+		
+		System.out.print("Enter the price of your item: ");
+		price = kb.nextDouble();
+		
+		System.out.print("How much money will you give the cashier? : ");
+		payment = kb.nextDouble();
+		
+		if (price > payment) {
+			System.out.println("That is not enough money!");
+		}
 	}
 
 }
