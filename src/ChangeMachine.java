@@ -22,19 +22,10 @@ public class ChangeMachine {
 		else {
 			difference = (int)((payment - price) * 100);
 			makeChange(difference);
+			countChange();
 		}
 		kb.close();
 		
-		System.out.println("Your change:");
-		for (int i = 0; i < change.length; i++) {
-			if (change[i] > 0) {
-				do {
-					printMoney(i);
-					change[i]--;
-				} while (change[i] != 0);
-				System.out.println();
-			}
-		}
 	}
 	public static void printMoney(int arrIndex) {
 		if (arrIndex == 0)
@@ -100,6 +91,18 @@ public class ChangeMachine {
 			else {
 				change[9]++;
 				difference--;
+			}
+		}
+	}
+	public static void countChange() {
+		System.out.println("Your change:");
+		for (int i = 0; i < change.length; i++) {
+			if (change[i] > 0) {
+				do {
+					printMoney(i);
+					change[i]--;
+				} while (change[i] != 0);
+				System.out.println();
 			}
 		}
 	}
