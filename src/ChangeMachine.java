@@ -32,6 +32,7 @@ public class ChangeMachine {
 					printMoney(i);
 					change[i]--;
 				} while (change[i] != 0);
+				System.out.println();
 			}
 		}
 	}
