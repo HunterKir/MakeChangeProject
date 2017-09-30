@@ -22,32 +22,32 @@ public class ChangeMachine {
 		else {
 			difference = (int)((payment - price) * 100);
 			makeChange(difference);
-			countChange();
+			countChange(difference);
 		}
 		kb.close();
-		
 	}
+	
 	public static void printMoney(int arrIndex) {
 		if (arrIndex == 0)
-			System.out.print("$100 ");
+			System.out.print("\u2503$100\u2503 ");
 		else if (arrIndex == 1)
-			System.out.print("$50 ");
+			System.out.print("\u2503$ 50\u2503 ");
 		else if (arrIndex == 2)
-			System.out.print("$20 ");
+			System.out.print("\u2503$ 20\u2503 ");
 		else if (arrIndex == 3)
-			System.out.print("$10 ");
+			System.out.print("\u2503$ 10\u2503 ");
 		else if (arrIndex == 4)
-			System.out.print("$5 ");
+			System.out.print("\u2503$  5\u2503 ");
 		else if (arrIndex == 5)
-			System.out.print("$1 ");
+			System.out.print("\u2503$  1\u2503 ");
 		else if (arrIndex == 6)
-			System.out.print("25\u00A2 ");
+			System.out.print("(25\u00A2) ");
 		else if (arrIndex == 7)
-			System.out.print("10\u00A2 ");
+			System.out.print("(10\u00A2) ");
 		else if (arrIndex == 8)
-			System.out.print("5\u00A2 ");
+			System.out.print("(5\u00A2) ");
 		else if (arrIndex == 9)
-			System.out.print("1\u00A2 ");
+			System.out.print("(1\u00A2) ");
 	}
 	
 	public static void makeChange(int difference) {
@@ -94,8 +94,9 @@ public class ChangeMachine {
 			}
 		}
 	}
-	public static void countChange() {
-		System.out.println("Your change:");
+	
+	public static void countChange(int difference) {
+		System.out.println("Your change:\n--------------------");
 		for (int i = 0; i < change.length; i++) {
 			if (change[i] > 0) {
 				do {
@@ -105,5 +106,6 @@ public class ChangeMachine {
 				System.out.println();
 			}
 		}
+		System.out.println("--------------------\nTotal change: $" + ((double)(difference)) / 100);
 	}
 }
